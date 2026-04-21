@@ -20,7 +20,7 @@ cvc = ComputerVisionClient(endpoint, CognitiveServicesCredentials(key))
 
 image_path = Path("receipts") / "sample.jpg"
 
-if not image_path:
+if not image_path.exists():
     raise FileNotFoundError(f"이미지 파일을 찾을 수 없습니다: {image_path}")
 
 with open(image_path, "rb") as f:
@@ -36,10 +36,6 @@ MAX_WAIT_SECONDS = 60
 start = time.time()
 
 print("OCR 처리 중...", end="", flush=True)
-# ...
-print(".", end="", flush=True)  # 루프마다 점 추가
-# ...
-print(" 완료!")
 
 while True:
     if time.time() - start > MAX_WAIT_SECONDS:
@@ -53,7 +49,7 @@ while True:
     print(".", end="", flush=True)
     time.sleep(1)
 
-print("완료!")
+print(" 완료!")
 
 if result.status == OperationStatusCodes.succeeded:
     ocr_texts = []
