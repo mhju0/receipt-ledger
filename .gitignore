@@ -1,0 +1,25 @@
+# 환경변수 (API 키 절대 업로드 금지)
+.env
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyc
+
+# 가상환경
+venv/
+env/
+.venv/
+
+# VS Code
+.vscode/
+
+# macOS/Windows 시스템 파일
+.DS_Store
+Thumbs.db
+
+# 영수증 이미지 (개인정보 포함될 수 있음)
+receipts/*.jpg
+receipts/*.png
+receipts/*.jpeg
+!receipts/.gitkeep
