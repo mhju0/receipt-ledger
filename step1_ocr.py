@@ -51,6 +51,7 @@ while True:
 
 print(" 완료!")
 
+# 상태별 분기 처리
 if result.status == OperationStatusCodes.succeeded:
     ocr_texts = []
     for page in result.analyze_result.read_results:
